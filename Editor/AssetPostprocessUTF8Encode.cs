@@ -9,7 +9,7 @@ namespace Kogane.Internal
     /// </summary>
     internal sealed class AssetPostprocessUTF8Encode : AssetPostprocessor
     {
-        private static readonly Encoding ENCODING = Encoding.GetEncoding( "utf-8" );
+        private static readonly Encoding m_encoding = Encoding.GetEncoding( "utf-8" );
 
         private static string m_currentDirectory;
 
@@ -60,7 +60,7 @@ namespace Kogane.Internal
                         var contents = enc.GetString( bs ).Replace( "\r\n", "\n" );
 
                         // ファイルを保存
-                        File.WriteAllText( assetPath, contents, ENCODING );
+                        File.WriteAllText( assetPath, contents, m_encoding );
                         // Debug.LogWarning( "convert script encode to UTF-8N : " + asset );
                     }
                 }

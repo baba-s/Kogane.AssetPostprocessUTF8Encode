@@ -1,4 +1,4 @@
-# UniAssetPostprocessUTF8Encode
+# Kogane Asset Postprocess UTF8 Encode
 
 インポートされた C# スクリプトの文字コードを UTF-8 BOM付 に変換するエディタ拡張
 

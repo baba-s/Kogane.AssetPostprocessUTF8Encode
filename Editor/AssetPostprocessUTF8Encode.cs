@@ -21,7 +21,7 @@ namespace Kogane.Internal
 
             m_currentDirectory ??= Directory.GetCurrentDirectory().Replace( "\\", "/" ) + "/";
 
-            var fullPath     = Path.GetFullPath( assetPath );
+            var fullPath     = Path.GetFullPath( assetPath ).Replace( "\\", "/" );
             var relativePath = fullPath.Replace( m_currentDirectory, "" );
 
             if ( !relativePath.StartsWith( "Assets/" ) &&

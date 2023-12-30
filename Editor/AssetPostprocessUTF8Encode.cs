@@ -1,4 +1,5 @@
-﻿using System.IO;
+﻿using System;
+using System.IO;
 using System.Text;
 using UnityEditor;
 
@@ -24,8 +25,8 @@ namespace Kogane.Internal
             var fullPath     = Path.GetFullPath( assetPath ).Replace( "\\", "/" );
             var relativePath = fullPath.Replace( m_currentDirectory, "" );
 
-            if ( !relativePath.StartsWith( "Assets/" ) &&
-                 !relativePath.StartsWith( "Packages/" ) )
+            if ( !relativePath.StartsWith( "Assets/", StringComparison.Ordinal ) &&
+                 !relativePath.StartsWith( "Packages/", StringComparison.Ordinal ) )
             {
                 return;
             }
